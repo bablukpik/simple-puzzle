@@ -9,8 +9,7 @@ let elemPosLeft = 0;
 let goToRight = true;
 let goToBottom = true;
 
-let timerPuzzle = setInterval(puzzle, delayInSecond);
-function puzzle() {
+let puzzle = ()=> {
     elemPosTop = squireElem.offsetTop;
     elemPosBottom = squireElem.offsetTop + squireElem.offsetHeight;
     elemPosLeft = squireElem.offsetLeft;
@@ -30,4 +29,6 @@ function puzzle() {
     elemPosLeft = goToRight ? elemPosLeft+10 : elemPosLeft-10;
     squireElem.style.top = elemPosTop+"px";
     squireElem.style.left = elemPosLeft+"px";
-}
+};
+
+setInterval(puzzle, delayInSecond);
